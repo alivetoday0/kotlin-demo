@@ -16,12 +16,4 @@ class WebFluxConfig: WebFluxConfigurer {
     override fun configureHttpMessageCodecs(configurer: ServerCodecConfigurer) {
         configurer.defaultCodecs().enableLoggingRequestDetails(true)
     }
-
-    @Bean
-    fun initializer(coneectionFactory: ConnectionFactory): ConnectionFactoryInitializer {
-        val initializer = ConnectionFactoryInitializer()
-        initializer.setConnectionFactory(coneectionFactory)
-        initializer.setDatabasePopulator(ResourceDatabasePopulator(ClassPathResource("schema.sql")))
-        return initializer
-    }
 }

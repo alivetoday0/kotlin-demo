@@ -12,8 +12,9 @@ class BoardRouter(val boardHandler: BoardHandler) {
     fun borderRouter() =
             RouterFunctions.nest(RequestPredicates.path("/board"),
                     router { listOf(
-                            GET("/", boardHandler::welcome),
-                            GET("/list", boardHandler::list)
+                        GET("/", boardHandler::welcome),
+                        POST("/", boardHandler::register),
+                        GET("/list", boardHandler::list)
                     )}
             )
 }

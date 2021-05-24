@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "2.4.4"
+	id("org.springframework.boot") version "2.5.0"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.4.31"
 	kotlin("plugin.spring") version "1.4.31"
@@ -31,8 +31,8 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	runtimeOnly("com.h2database:h2")
-	runtimeOnly("dev.miku:r2dbc-mysql")
-	runtimeOnly("io.r2dbc:r2dbc-h2")
+    runtimeOnly("io.r2dbc:r2dbc-h2")
+	runtimeOnly("org.mariadb:r2dbc-mariadb")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
